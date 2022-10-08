@@ -1,25 +1,58 @@
-import logo from './logo.svg';
+import { Button, Typography } from '@mui/material';
 import './App.css';
+import QuizApp from './component/quizapp';
+import {Box} from '@mui/material';
+import { useEffect, useState } from 'react';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const [startQuiz,setStartQuiz] = useState(false)
+
+
+
+
+const playQuiz = () => {
+  setStartQuiz(true)
+ 
+
+
 }
 
+
+
+
+
+
+
+
+  
+
+
+  return (
+    <Box>
+      {startQuiz?
+      
+      <Box>
+        <Box 
+        sx={{display:"flex",justifyContent:"center"}}
+        >
+        
+        </Box>
+       <Box> 
+        <QuizApp/>
+        </Box>
+      </Box>
+        :
+      <Box
+      sx={{height:"100vh",display:"flex",alignItems:"center",justifyContent:"center"}}
+      ><Button
+      onClick = {()=>{playQuiz()}}
+      variant = "outlined"
+      >Start Quiz</Button></Box>
+      },
+      
+    
+    </Box>
+  )
+}
 export default App;
